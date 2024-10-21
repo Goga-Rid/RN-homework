@@ -15,13 +15,18 @@ export const style = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#bcf7e8',
+      borderRadius: 20,
       alignItems: 'center',
       justifyContent: 'center',
+      padding: 20,
+      marginVertical: 8,
+      marginHorizontal: 16,
     },
     imagePL: {
       width: 200,
       height: 200,
       marginBottom: 10,
+      resizeMode: 'contain',
     },
     titleText: {
       fontSize: 24,
@@ -30,6 +35,7 @@ export const style = StyleSheet.create({
     },
     secondaryText: {
       fontSize: 15,
+      marginBottom: 15,
     },
   });
 

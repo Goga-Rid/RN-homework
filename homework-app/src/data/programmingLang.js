@@ -13,7 +13,7 @@ export const programmingLangList = [
     },
     {
       id: 3,
-      imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Java_logo_and_wordmark.svg/1200px-Java_logo_and_wordmark.svg.png",
+      imageURL: "https://upload.wikimedia.org/wikipedia/ru/thumb/3/39/Java_logo.svg/800px-Java_logo.svg.png",
       name: "Java",
       experienceYears: 3
     },
