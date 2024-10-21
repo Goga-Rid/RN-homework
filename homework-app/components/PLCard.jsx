@@ -1,15 +1,15 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-const ProgrammingLanguageCard = ({ languageName, experienceYears, imageURL }) => {
-  return (
-    <View style={style.container}>
-      <Image source={{ uri: imageURL }} style={style.imagePL} />
-      <Text style={style.titleText}>{languageName}</Text>
-      <Text style={style.secondaryText}>Опыт изучения(в годах): {experienceYears} </Text>
-    </View>
-  );
-};
+const ProgrammingLanguageCard = ({ languageName, experienceYears, imageURL: uri }) => (
+  <View style={style.container}>
+    <Image source={{ uri }} style={style.image} />
+    <Text style={style.title}>{languageName}</Text>
+    <Text style={style.secondary}>
+      {`Опыт изучения (в годах): ${experienceYears}`}
+    </Text>
+  </View>
+);
 
 export const style = StyleSheet.create({
     container: {

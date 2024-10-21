@@ -6,27 +6,30 @@ import { programmingLangList } from './src/data/programmingLang';
 
 
 export default function App() {
-const [refreshing, setRefreshing] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   const handleRefresh = () => {
-    setRefreshing(true);
+    setIsRefreshing(true);
     setTimeout(() => {
-      setRefreshing(false);
+      setIsRefreshing(false);
     }, 1000);
   };
 
   return (
-    <View style={styleApp.containerApp}>
-        <FlatList
+    <View style={styles.container}>
+      <FlatList
         data={programmingLangList}
-        renderItem={({item}) => <ProgrammingLanguageCard 
-        style={style.container}
-        imageURL={item.imageURL}
-        languageName={item.name}  
-        experienceYears={item.experienceYears}
-      />}
-        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <ProgrammingLanguageCard
+            style={styles.languageCard}
+            imageURL={item.imageURL}
+            languageName={item.name}
+            experienceYears={item.experienceYears}
+          />
+        )}
+        keyExtractor={(item) => item.id.toString()}
         onRefresh={handleRefresh}
-        refreshing={refreshing}
+        refreshing={isRefreshing}
       />
       <StatusBar style="auto" />
     </View>
