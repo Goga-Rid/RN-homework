@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet, FlatList } from 'react-native';
 import ProgrammingLanguageCard, { style } from './components/PLCard';
@@ -5,6 +6,14 @@ import { programmingLangList } from './src/data/programmingLang';
 
 
 export default function App() {
+const [refreshing, setRefreshing] = useState(false);
+  const handleRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  };
+
   return (
     <View style={styleApp.containerApp}>
         <FlatList
@@ -16,6 +25,8 @@ export default function App() {
         experienceYears={item.experienceYears}
       />}
         keyExtractor={item => item.id}
+        onRefresh={handleRefresh}
+        refreshing={refreshing}
       />
       <StatusBar style="auto" />
     </View>
